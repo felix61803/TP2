@@ -4,19 +4,18 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
-import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import ca.ulaval.ima.tp2.ui.fragment.AProposFragment
-import ca.ulaval.ima.tp2.ui.fragment.InternetFragment
 import ca.ulaval.ima.tp2.ui.fragment.AbacusFragment
 import ca.ulaval.ima.tp2.ui.fragment.FormulaireFragment
-import ca.ulaval.ima.tp2.ui.fragment.ProfilFragment
+import ca.ulaval.ima.tp2.ui.fragment.InternetFragment
+import com.google.android.material.navigation.NavigationView
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -39,6 +38,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val navView: NavigationView = findViewById(R.id.nav_view)
         navView.setNavigationItemSelectedListener(this)
+
+
     }
 
     override fun onBackPressed() {

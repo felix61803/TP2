@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,17 +8,76 @@
     tools:context=".ui.fragment.InternetFragment">
 
     <TextView
-        android:id="@+id/text_mon_profil"
-        android:layout_width="match_parent"
+        android:id="@+id/prenom"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:text="Mon profil"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Prénom: "
+        app:layout_constraintBottom_toTopOf="@+id/naissance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom: "
+        app:layout_constraintBottom_toTopOf="@+id/naissance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prenom" />
+
+    <TextView
+        android:id="@+id/naissance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date de naissance: "
+        app:layout_constraintBottom_toTopOf="@+id/text_mon_profil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/leSexe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexe:"
+        app:layout_constraintBottom_toTopOf="@+id/programme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naissance" />
+
+    <TextView
+        android:id="@+id/programme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Programme:"
+        app:layout_constraintBottom_toTopOf="@+id/text_mon_profil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naissance" />
+
+    <TextView
+        android:id="@+id/text_mon_profil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Description"
+        android:textColorHighlight="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/leTexte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="He has enough money to last forever. He knows he needs to keep moving. You'll never find him. He's out of the picture. I saved his life, I owed him that, but now he and I are done. Which is exactly what you wanted, isn't it. You've always struck me as a very pragmatic man so if I may, I would like to review options with you. Of which, it seems to me you have two.
+
+Option A, you kill me right here and now. Apparently I've made that very easy for you. You can kill me, no witnesses and then spend the next few weeks or months tracking down Jesse Pinkman and you kill him too. A pointless exercise it seems to me but that is Option A.
+
+I continue cooking, you and I both forget about Pinkman. We forget this ever happened. We consider this a lone hiccup in an otherwise long and fruitful business arrangement. I prefer Option B.
+
+He'll live. I asked to see you in order to... clear the air. There are uh, some... issues that could cause a misunderstanding between us and I think it's in our best interest to lay the cards on the table. My brother-in-law, moments before he was attacked, someone called to warn him. I believe that same person was protecting me.
+
+THE END 4x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_mon_profil" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

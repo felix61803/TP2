@@ -1,9 +1,11 @@
 package ca.ulaval.ima.tp2.ui.fragment
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +14,8 @@ import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import ca.ulaval.ima.tp2.MainActivity2
+import ca.ulaval.ima.tp2.ProfilUser
 import ca.ulaval.ima.tp2.R
 
 
@@ -25,11 +29,19 @@ class FormulaireFragment : Fragment() {
     ): View? {
 
 
+        var soumissionNaissance = "1999-8-19"
+        var soumissionSexe = "Masculin"
+        var soumissionDepartement="GEL"
+
         val root = inflater.inflate(R.layout.fragment_formulaire, container, false)
         val prenom: EditText = root.findViewById(R.id.form_edit_prenom)
         val nom: EditText = root.findViewById(R.id.form_edit_nom)
         val naissance: EditText = root.findViewById(R.id.form_edit_naissance)
         val group: RadioGroup = root.findViewById(R.id.radioGroup)
+        val soumettre: Button = root.findViewById(R.id.form_soumettre)
+
+        var soumissionPrenom: String
+        var soumissionNom = "Côté"
 
         //val f: RadioButton = root.findViewById(R.id.sexe_f)
         val programme: Spinner = root.findViewById(R.id.form_edit_prog)
@@ -50,8 +62,9 @@ class FormulaireFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                val cck = parent.getItemAtPosition(position).toString()
-                Log.i("prog",cck)
+                val departement = parent.getItemAtPosition(position).toString()
+                Log.i("prog",departement)
+                soumissionDepartement = departement
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -62,8 +75,10 @@ class FormulaireFragment : Fragment() {
             override fun onCheckedChanged(p0: RadioGroup?, p1: Int) {
                 if (p1 == R.id.sexe_m) {
                     Log.i("sexe", "homme")
+                    soumissionSexe = "Mascuslin"
                 } else if (p1 == R.id.sexe_f) {
                     Log.i("sexe", "femme")
+                    soumissionSexe = "Féminin"
                 }
             }
         }
@@ -81,6 +96,7 @@ class FormulaireFragment : Fragment() {
                 { view, year, monthOfYear, dayOfMonth ->
                     val dateSelected = (year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString())
                     naissance.setText(dateSelected)
+                    soumissionNaissance = dateSelected
                 },
                 year,
                 month,
@@ -89,6 +105,32 @@ class FormulaireFragment : Fragment() {
             datePickerDialog.show()
         }
 
+        soumettre.setOnClickListener(View.OnClickListener {
+            soumissionPrenom = prenom.text.toString()
+            if(prenom.text.toString() == "") {
+                soumissionPrenom = "Félix"
+            }
+            soumissionNom = nom.text.toString()
+            if(nom.text.toString() == "") {
+                soumissionNom = "Côté"
+            }
+            Log.i("soumission",soumissionPrenom.toString())
+            Log.i("soumission",soumissionNom.toString())
+            Log.i("soumission",soumissionNaissance)
+            Log.i("soumission",soumissionSexe)
+            Log.i("soumission",soumissionDepartement)
+
+            val infoProfil: Parcelable = ProfilUser(soumissionPrenom,soumissionNom, soumissionNaissance,soumissionSexe,soumissionDepartement)
+            val bundle1 = Bundle()
+            val intent= Intent(root.context, MainActivity2::class.java)
+            intent.putExtra("Profil",infoProfil)
+            startActivity(intent)
+            //bundle1.putParcelable("company", companies.get(i))
+            //val intent = Intent(activity, CompanyInfoActivity::class.java)
+            //intent.putExtras(bundle1)
+            //activity!!.startActivity(intent)
+        })
+
 
         //prenom.hint ="Félix"
         //nom.hint="Côté"
@@ -96,4 +138,5 @@ class FormulaireFragment : Fragment() {
 
         return root
     }
+
 }
