@@ -58,22 +58,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.getItemId()
         if (id == R.id.nav_internet) {
+            title="Status Internet"
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.nav_host_fragment, InternetFragment())
             transaction.commit()
         } else if (id == R.id.nav_a_propos) {
+            title="À Propos"
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.nav_host_fragment, AProposFragment())
             transaction.commit()
         } else if (id == R.id.nav_abacus) {
+            title="Abacus"
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.nav_host_fragment, AbacusFragment())
             transaction.commit()
         } else if (id == R.id.nav_formulaire) {
+            title= "TP2"
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.nav_host_fragment, FormulaireFragment())
             transaction.commit()
         } else if (id == R.id.nav_profil) {
+            title="Mon Profil"
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.nav_host_fragment, ProfilFragment())
             transaction.commit()

@@ -19,6 +19,7 @@
         android:id="@+id/form_edit_prenom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Félix"
         app:layout_constraintTop_toBottomOf="@+id/form_prenom" />
 
     <TextView
@@ -32,6 +33,7 @@
         android:id="@+id/form_edit_nom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Côté"
         app:layout_constraintTop_toBottomOf="@+id/form_nom" />
 
     <TextView
@@ -49,7 +51,7 @@
         android:cursorVisible="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:hint="Entrer la date"
+        android:hint="1999-8-19"
         app:layout_constraintTop_toBottomOf="@+id/form_naissance" />
 
     <TextView
@@ -70,8 +72,8 @@
             android:id="@+id/sexe_m"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="masculinClicked"
             android:text="Masculin"
+            android:checked="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/form_sexe" />
 
@@ -79,7 +81,6 @@
             android:id="@+id/sexe_f"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="masculinClicked"
             android:text="Féminin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sexe_m" />
@@ -103,6 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Soumettre"
+        app:backgroundTint="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
