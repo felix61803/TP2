@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_internet"
+            android:icon="@drawable/baseline_network_wifi_3_bar_24"
+            android:title="@string/internet" />
+        <item
+            android:id="@+id/nav_a_propos"
+            android:icon="@drawable/baseline_info_24"
+            android:title="@string/propos" />
+        <item
+            android:id="@+id/nav_abacus"
+            android:icon="@drawable/baseline_add_box_24"
+            android:title="@string/abacuse" />
+    </group>
+
+    <item android:title="@string/text">
+        <menu>
+            <group android:checkableBehavior="single" android:id="@+id/bas">
+                <item
+                    android:id="@+id/nav_formulaire"
+                    android:icon="@drawable/baseline_create_24"
+                    android:title="@string/formulaire" />
+                <item
+                    android:id="@+id/nav_profil"
+                    android:icon="@drawable/baseline_person_24"
+                    android:title="@string/profil" />
+            </group>
+        </menu>
+    </item>
+</menu>

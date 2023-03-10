@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TP2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">TP2</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="internet">Statut Internet</string>
+    <string name="propos">À propos</string>
+    <string name="abacuse">Abacus</string>
+    <string name="text">Gestion utilisateur</string>
+    <string name="formulaire">Formulaire</string>
+    <string name="profil">Mon Profil</string>
+
+    <string-array name="department">
+        <item>GEL</item>
+        <item>GIF</item>
+        <item>GLO</item>
+        <item>IFT</item>
+    </string-array>
+</resources>

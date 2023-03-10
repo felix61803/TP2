@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.FormulaireFragment">
+
+    <TextView
+        android:id="@+id/form_prenom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prénom: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/form_edit_prenom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/form_prenom" />
+
+    <TextView
+        android:id="@+id/form_nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom: "
+        app:layout_constraintTop_toBottomOf="@+id/form_edit_prenom" />
+
+    <EditText
+        android:id="@+id/form_edit_nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/form_nom" />
+
+    <TextView
+        android:id="@+id/form_naissance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date de naissance: "
+        app:layout_constraintTop_toBottomOf="@+id/form_edit_nom" />
+
+    <EditText
+        android:id="@+id/form_edit_naissance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Entrer la date"
+        app:layout_constraintTop_toBottomOf="@+id/form_naissance" />
+
+    <TextView
+        android:id="@+id/form_sexe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sexe: "
+        app:layout_constraintTop_toBottomOf="@+id/form_edit_naissance" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/form_sexe" >
+
+        <RadioButton
+            android:id="@+id/sexe_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="masculinClicked"
+            android:text="Masculin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/form_sexe" />
+
+        <RadioButton
+            android:id="@+id/sexe_f"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="masculinClicked"
+            android:text="Féminin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sexe_m" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/form_prog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Programme: "
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Spinner
+        android:id="@+id/form_edit_prog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/form_prog" />
+
+    <Button
+        android:id="@+id/form_soumettre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soumettre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/form_edit_prog" />
+</androidx.constraintlayout.widget.ConstraintLayout>
