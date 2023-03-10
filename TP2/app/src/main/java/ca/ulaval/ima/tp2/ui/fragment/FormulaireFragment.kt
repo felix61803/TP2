@@ -14,8 +14,6 @@ import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import ca.ulaval.ima.tp2.MainActivity2
-import ca.ulaval.ima.tp2.ProfilUser
 import ca.ulaval.ima.tp2.R
 
 
@@ -41,7 +39,7 @@ class FormulaireFragment : Fragment() {
         val soumettre: Button = root.findViewById(R.id.form_soumettre)
 
         var soumissionPrenom: String
-        var soumissionNom = "Côté"
+        var soumissionNom: String
 
         //val f: RadioButton = root.findViewById(R.id.sexe_f)
         val programme: Spinner = root.findViewById(R.id.form_edit_prog)
@@ -125,17 +123,7 @@ class FormulaireFragment : Fragment() {
             val intent= Intent(root.context, MainActivity2::class.java)
             intent.putExtra("Profil",infoProfil)
             startActivity(intent)
-            //bundle1.putParcelable("company", companies.get(i))
-            //val intent = Intent(activity, CompanyInfoActivity::class.java)
-            //intent.putExtras(bundle1)
-            //activity!!.startActivity(intent)
         })
-
-
-        //prenom.hint ="Félix"
-        //nom.hint="Côté"
-
-
         return root
     }
 

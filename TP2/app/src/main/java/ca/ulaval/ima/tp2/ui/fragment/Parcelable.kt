@@ -1,4 +1,4 @@
-package ca.ulaval.ima.tp2
+package ca.ulaval.ima.tp2.ui.fragment
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
